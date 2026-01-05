@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { InterviewSession, TimerState, SessionQuestion, AnswerAnalysis } from '../types';
+import { InterviewSession, TimerState, AnswerAnalysis } from '../types';
 
 interface InterviewStore {
   // Current session

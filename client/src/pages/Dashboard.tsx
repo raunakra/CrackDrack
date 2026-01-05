@@ -7,8 +7,7 @@ import {
   Clock, 
   Skull,
   Flame,
-  Trophy,
-  ArrowRight
+  Trophy
 } from 'lucide-react';
 
 export default function Dashboard() {

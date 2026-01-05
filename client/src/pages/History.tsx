@@ -6,7 +6,6 @@ import {
   Calendar,
   Clock,
   CheckCircle,
-  XCircle,
   AlertCircle,
   ChevronRight,
   Skull,

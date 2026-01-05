@@ -42,7 +42,7 @@ export default function MockInterview() {
   const [showHints, setShowHints] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   
-  const { startTimer, stopTimer, timerState } = useInterviewStore();
+  const { startTimer, stopTimer } = useInterviewStore();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
@@ -345,7 +345,7 @@ export default function MockInterview() {
 }
 
 // Mock analysis generator (will be replaced with real AI)
-function generateBrutalAnalysis(answer: string, questionTitle: string): AnswerAnalysis {
+function generateBrutalAnalysis(answer: string, _questionTitle: string): AnswerAnalysis {
   const length = answer.length;
   const hasCode = answer.includes('function') || answer.includes('def ') || answer.includes('class ') || answer.includes('{') || answer.includes('->');
   const hasComplexity = answer.toLowerCase().includes('o(') || answer.toLowerCase().includes('time complexity') || answer.toLowerCase().includes('space complexity');

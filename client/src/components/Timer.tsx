@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect } from 'react';
 import { useInterviewStore } from '../stores/interviewStore';
 import { Clock, AlertTriangle, Skull } from 'lucide-react';
 
@@ -9,7 +9,6 @@ interface TimerProps {
 
 export default function Timer({ onTimeUp, className = '' }: TimerProps) {
   const { timerState, updateTimer, pauseTimer, resumeTimer } = useInterviewStore();
-  const [showWarning, setShowWarning] = useState(false);
 
   useEffect(() => {
     if (!timerState || !timerState.isRunning) return;

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CrackDrack - Redirecting...</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // This script handles client-side routing for GitHub Pages
+      // by redirecting 404s to index.html with the path stored in sessionStorage
+      const segmentCount = 1; // Number of path segments to keep (repo name)
+      const location = window.location;
+      const pathSegments = location.pathname.split('/').filter(Boolean);
+      
+      if (pathSegments.length > segmentCount) {
+        const redirectPath = '/' + pathSegments.slice(0, segmentCount).join('/') + '/?p=/' + 
+          pathSegments.slice(segmentCount).join('/').replace(/&/g, '~and~') +
+          location.search.replace(/&/g, '~and~').replace(/\?/g, '&') +
+          location.hash;
+        sessionStorage.setItem('redirect', location.pathname + location.search + location.hash);
+        location.replace(redirectPath);
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>

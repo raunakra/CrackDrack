@@ -75,7 +75,39 @@ npm run dev
 
 Open http://localhost:3000 in your browser.
 
-## 📁 Project Structure
+## � Deploying to GitHub Pages
+
+### Automatic Deployment (Recommended)
+
+1. Push your code to GitHub
+2. Go to **Settings → Pages**
+3. Under "Build and deployment", select **GitHub Actions**
+4. The app will auto-deploy on every push to `main` or `master`
+
+Your app will be live at: `https://yourusername.github.io/CrackDrack/`
+
+### Manual Deployment
+
+```bash
+cd client
+
+# Update homepage in package.json with your GitHub username
+# "homepage": "https://YOUR_USERNAME.github.io/CrackDrack"
+
+# Install gh-pages if not already installed
+npm install
+
+# Build and deploy
+npm run deploy
+```
+
+### Important Notes for GitHub Pages
+
+- The app uses **HashRouter** (`/#/path`) for GitHub Pages compatibility
+- AI analysis works with **client-side fallback** when no backend is available
+- For full AI features, deploy the backend separately (Vercel, Railway, etc.)
+
+## �📁 Project Structure
 
 ```
 CrackDrack/
