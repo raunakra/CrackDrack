@@ -1,9 +1,10 @@
 import OpenAI from 'openai';
 import { AnalysisRequest, AnalysisResponse } from '../types/index.js';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Only initialize OpenAI if API key is present
+const openai = process.env.OPENAI_API_KEY 
+  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+  : null;
 
 const BRUTAL_SYSTEM_PROMPT = `You are a jaded senior FAANG interviewer who has conducted over 1000 interviews and rejected 80% of candidates. You've seen every mistake, every excuse, every mediocre answer. Your job is to give BRUTALLY honest feedback - not to be mean, but because you know sugar-coating doesn't help anyone get better.
 
@@ -160,6 +161,12 @@ Respond in this exact JSON format:
   "improvementAreas": ["<specific action 1>", "<specific action 2>", ...],
   "resourcesRecommended": ["<resource 1>", "<resource 2>", ...]
 }`;
+
+  // If no OpenAI key, use fallback
+  if (!openai) {
+    console.log('No OpenAI API key configured, using fallback analysis');
+    return generateFallbackAnalysis(request);
+  }
 
   try {
     const response = await openai.chat.completions.create({
