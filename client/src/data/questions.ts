@@ -11,7 +11,7 @@ export const companies: Company[] = [
     bgGradient: 'from-blue-600 to-blue-800',
     description: 'System design at scale, algorithmic thinking, and Googleyness',
     categories: [
-      { id: 'coding', name: 'Coding', type: 'coding', timeLimit: 45, questionCount: 50, icon: '💻' },
+      { id: 'coding', name: 'Coding', type: 'coding', timeLimit: 45, questionCount: 70, icon: '💻' },
       { id: 'system-design', name: 'System Design', type: 'system-design', timeLimit: 60, questionCount: 10, icon: '🏗️' },
       { id: 'behavioral', name: 'Googleyness & Leadership', type: 'behavioral', timeLimit: 30, questionCount: 12, icon: '🎯' },
       { id: 'phone-screen', name: 'Phone Screen', type: 'coding', timeLimit: 45, questionCount: 8, icon: '📱' },
@@ -1364,6 +1364,537 @@ Output: [null, 9, null, 8]`,
     hints: ['Segment Tree for O(log n) update and query', 'Or Binary Indexed Tree (Fenwick Tree)'],
     expectedTopics: ['Segment Tree', 'Binary Indexed Tree', 'Design'],
     yearAsked: 2024,
+    frequency: 'High'
+  },
+  
+  // Google 2025 DSA Questions
+  {
+    id: 'g-code-51',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Design a Text Editor',
+    description: `Design a text editor with a cursor that can do the following:
+- addText(text) - Appends text to where the cursor is. The cursor ends to the right of text.
+- deleteText(k) - Deletes k characters to the left of the cursor. Returns the number of characters actually deleted.
+- cursorLeft(k) - Moves the cursor to the left k times. Returns the last min(10, len) characters to the left of the cursor.
+- cursorRight(k) - Moves the cursor to the right k times. Returns the last min(10, len) characters to the left of the cursor.
+
+Example:
+Input: ["TextEditor", "addText", "deleteText", "addText", "cursorRight", "cursorLeft", "deleteText", "cursorLeft", "cursorRight"]
+[[], ["leetcode"], [4], ["practice"], [3], [8], [10], [2], [6]]
+Output: [null, null, 4, null, "etpractice", "leet", 4, "", "practi"]`,
+    difficulty: 'Hard',
+    timeLimit: 35,
+    hints: ['Use two stacks: one for left of cursor, one for right', 'Or use a doubly linked list with cursor pointer'],
+    expectedTopics: ['Design', 'Stack', 'Linked List', 'String'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-52',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Minimum Cost to Make Array Equal',
+    description: `You are given two 0-indexed arrays nums and cost consisting each of n positive integers.
+
+You can do the following operation any number of times:
+- Increase or decrease any element of the array nums by 1.
+
+The cost of doing one operation on the ith element is cost[i].
+
+Return the minimum total cost such that all the elements of the array nums become equal.
+
+Example 1:
+Input: nums = [1,3,5,2], cost = [2,3,1,14]
+Output: 8
+Explanation: We can make all elements equal to 2 with total cost = |1-2|*2 + |3-2|*3 + |5-2|*1 + |2-2|*14 = 2 + 3 + 3 + 0 = 8.
+
+Example 2:
+Input: nums = [2,2,2,2,2], cost = [4,2,8,1,3]
+Output: 0`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Binary search on the target value', 'Or weighted median approach', 'The optimal target is always one of the existing values'],
+    expectedTopics: ['Binary Search', 'Greedy', 'Sorting', 'Prefix Sum'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-53',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Minimum Obstacle Removal to Reach Corner',
+    description: `You are given a 0-indexed 2D integer array grid of size m x n. Each cell has one of two values:
+- 0 represents an empty cell
+- 1 represents an obstacle that may be removed
+
+You can move up, down, left, or right from and to an empty cell.
+
+Return the minimum number of obstacles to remove so you can move from the upper left corner (0, 0) to the lower right corner (m - 1, n - 1).
+
+Example 1:
+Input: grid = [[0,1,1],[1,1,0],[1,1,0]]
+Output: 2
+Explanation: We can remove the obstacles at (0, 1) and (0, 2) to create a path.
+
+Example 2:
+Input: grid = [[0,1,0,0,0],[0,1,0,1,0],[0,0,0,1,0]]
+Output: 0`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['0-1 BFS using deque', 'Add to front if cost is 0, back if cost is 1', 'Or Dijkstra with priority queue'],
+    expectedTopics: ['BFS', '0-1 BFS', 'Graph', 'Shortest Path'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-54',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Minimum Replacements to Sort the Array',
+    description: `You are given a 0-indexed integer array nums. In one operation you can replace any element of the array with any two elements that sum to it.
+
+Return the minimum number of operations to make an array that is sorted in non-decreasing order.
+
+Example 1:
+Input: nums = [3,9,3]
+Output: 2
+Explanation: Here are the steps to sort the array: [3,9,3] → [3,4,5,3] → [3,4,2,3,3]
+Wait, that's wrong. Let's think again: [3,9,3] → [3,3,6,3] → [3,3,3,3,3]
+
+Example 2:
+Input: nums = [1,2,3,4,5]
+Output: 0`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Work backwards from the end', 'For each element, split it into parts <= next element', 'Greedy: maximize the leftmost part after splitting'],
+    expectedTopics: ['Greedy', 'Math', 'Array'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-55',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Amount of Time for Binary Tree to Be Infected',
+    description: `You are given the root of a binary tree with unique values, and an integer start. At minute 0, an infection starts from the node with value start.
+
+Each minute, a node becomes infected if:
+- The node is currently uninfected.
+- The node is adjacent to an infected node.
+
+Return the number of minutes needed for the entire tree to be infected.
+
+Example 1:
+Input: root = [1,5,3,null,4,10,6,9,2], start = 3
+Output: 4
+
+Example 2:
+Input: root = [1], start = 1
+Output: 0`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['Convert tree to graph with parent pointers', 'BFS from start node', 'Track max distance reached'],
+    expectedTopics: ['Tree', 'BFS', 'Graph', 'DFS'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-56',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Count Subarrays With Fixed Bounds',
+    description: `You are given an integer array nums and two integers minK and maxK.
+
+A fixed-bound subarray of nums is a subarray that satisfies the following conditions:
+- The minimum value in the subarray is equal to minK.
+- The maximum value in the subarray is equal to maxK.
+
+Return the number of fixed-bound subarrays.
+
+Example 1:
+Input: nums = [1,3,5,2,7,5], minK = 1, maxK = 5
+Output: 2
+Explanation: The fixed-bound subarrays are [1,3,5] and [1,3,5,2].
+
+Example 2:
+Input: nums = [1,1,1,1], minK = 1, maxK = 1
+Output: 10`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Track last position of minK, maxK, and invalid elements', 'For each position, count valid subarrays ending there'],
+    expectedTopics: ['Sliding Window', 'Array', 'Two Pointers'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-57',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Maximum Value of K Coins From Piles',
+    description: `There are n piles of coins on a table. Each pile consists of a positive number of coins of assorted denominations.
+
+In one move, you can choose any coin on top of any pile, remove it, and add it to your wallet.
+
+Given a list piles, where piles[i] is a list of integers denoting the composition of the ith pile from top to bottom, and a positive integer k, return the maximum total value of coins you can have in your wallet if you choose exactly k coins optimally.
+
+Example 1:
+Input: piles = [[1,100,3],[7,8,9]], k = 2
+Output: 101
+Explanation: Take 1 from pile 0, then 100 from pile 0.
+
+Example 2:
+Input: piles = [[100],[100],[100],[100],[100],[100],[1,1,1,1,1,1,700]], k = 7
+Output: 706`,
+    difficulty: 'Hard',
+    timeLimit: 35,
+    hints: ['DP with pile index and remaining coins', 'For each pile, precompute prefix sums', 'dp[i][k] = max value using first i piles and k coins'],
+    expectedTopics: ['Dynamic Programming', 'Prefix Sum', 'Array'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-58',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Parallel Courses III',
+    description: `You are given an integer n, which indicates that there are n courses labeled from 1 to n. You are also given a 2D integer array relations where relations[j] = [prevCourse, nextCourse] indicates that course prevCourse must be completed before course nextCourse. Finally, you are given an integer array time where time[i] indicates the number of months needed to complete the (i+1)th course.
+
+You can start multiple courses at the same time if their prerequisites are satisfied.
+
+Return the minimum number of months needed to complete all the courses.
+
+Example 1:
+Input: n = 3, relations = [[1,3],[2,3]], time = [3,2,5]
+Output: 8
+Explanation: Courses 1 and 2 start at month 0. Course 1 finishes at month 3, course 2 at month 2. Course 3 starts at month 3 and finishes at month 8.
+
+Example 2:
+Input: n = 5, relations = [[1,5],[2,5],[3,5],[3,4],[4,5]], time = [1,2,3,4,5]
+Output: 12`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Topological sort with dynamic programming', 'For each course, track the earliest start time', 'Start time = max finish time of all prerequisites'],
+    expectedTopics: ['Graph', 'Topological Sort', 'Dynamic Programming'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-59',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Find the Longest Valid Obstacle Course',
+    description: `You want to build some obstacle courses. You are given a 0-indexed integer array obstacles of length n, where obstacles[i] describes the height of the ith obstacle.
+
+For every index i between 0 and n - 1 (inclusive), find the length of the longest obstacle course in obstacles such that:
+- You choose any number of obstacles between 0 and i inclusive.
+- You must include the ith obstacle in the course.
+- You must put the chosen obstacles in the same order as they appear in obstacles.
+- Every obstacle (except the first) is taller than or the same height as the obstacle immediately before it.
+
+Return an array ans of length n, where ans[i] is the length of the longest obstacle course for index i.
+
+Example:
+Input: obstacles = [1,2,3,2]
+Output: [1,2,3,3]`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Similar to Longest Increasing Subsequence', 'Use binary search with patience sorting', 'Handle equal elements with upper_bound'],
+    expectedTopics: ['Binary Search', 'Dynamic Programming', 'Array'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-60',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Number of Ways to Arrive at Destination',
+    description: `You are in a city that consists of n intersections numbered from 0 to n - 1 with bi-directional roads between some intersections. The inputs are generated such that you can reach any intersection from any other intersection.
+
+You are given an integer n and a 2D integer array roads where roads[i] = [ui, vi, timei] means that there is a road between intersections ui and vi that takes timei minutes to travel.
+
+Return the number of ways you can arrive at intersection n - 1 from intersection 0 in the shortest amount of time. Since the answer may be large, return it modulo 10^9 + 7.
+
+Example:
+Input: n = 7, roads = [[0,6,7],[0,1,2],[1,2,3],[1,3,3],[6,3,3],[3,5,1],[6,5,1],[2,5,1],[0,4,5],[4,6,2]]
+Output: 4`,
+    difficulty: 'Medium',
+    timeLimit: 30,
+    hints: ['Dijkstra with path counting', 'Track both shortest distance and number of ways', 'Update count when finding equal distance path'],
+    expectedTopics: ['Graph', 'Dijkstra', 'Shortest Path', 'Dynamic Programming'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-61',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Maximum Running Time of N Computers',
+    description: `You have n computers. You are given the integer n and a 0-indexed integer array batteries where the ith battery can run a computer for batteries[i] minutes. You want to run all n computers simultaneously using the given batteries.
+
+Initially, you can insert at most one battery into each computer. After that, at any point in time you can remove a battery from a computer and insert another battery any number of times. The computer runs only when there is a battery in it.
+
+Return the maximum number of minutes you can run all n computers simultaneously.
+
+Example 1:
+Input: n = 2, batteries = [3,3,3]
+Output: 4
+Explanation: Insert battery 0 in computer 0, battery 1 in computer 1. After 2 mins, remove battery 1 from computer 1, insert battery 2. Total: 4 minutes running simultaneously.
+
+Example 2:
+Input: n = 2, batteries = [1,1,1,1]
+Output: 2`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Binary search on the answer', 'Check if running time T is achievable', 'Total power needed is n * T, available power is min(batteries[i], T) for each'],
+    expectedTopics: ['Binary Search', 'Greedy', 'Sorting'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-62',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Shortest Path to Get All Keys',
+    description: `You are given an m x n grid where:
+- '.' is an empty cell.
+- '#' is a wall.
+- '@' is the starting point.
+- Lowercase letters represent keys.
+- Uppercase letters represent locks.
+
+You start at the starting point and one move consists of walking one space in one of the four cardinal directions. You cannot walk outside the grid, or walk into a wall.
+
+If you walk over a key, you can pick it up and you cannot walk over a lock unless you have its corresponding key.
+
+Return the lowest number of moves to acquire all keys. If it is impossible, return -1.
+
+Example 1:
+Input: grid = ["@.a..","###.#","b.A.B"]
+Output: 8
+
+Example 2:
+Input: grid = ["@..aA","..B#.","....b"]
+Output: 6`,
+    difficulty: 'Hard',
+    timeLimit: 35,
+    hints: ['BFS with state = (row, col, keys_bitmask)', 'Use bitmask to represent collected keys', 'Goal state is when all keys are collected'],
+    expectedTopics: ['BFS', 'Bit Manipulation', 'Graph', 'Matrix'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-63',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Maximum Profit in Job Scheduling',
+    description: `We have n jobs, where every job is scheduled to be done from startTime[i] to endTime[i], obtaining a profit of profit[i].
+
+You're given the startTime, endTime and profit arrays, return the maximum profit you can take such that there are no two jobs with overlapping time range.
+
+If you choose a job that ends at time X you will be able to start another job that starts at time X.
+
+Example 1:
+Input: startTime = [1,2,3,3], endTime = [3,4,5,6], profit = [50,10,40,70]
+Output: 120
+Explanation: The subset chosen is the first and fourth job. Profit = 50 + 70 = 120.
+
+Example 2:
+Input: startTime = [1,2,3,4,6], endTime = [3,5,10,6,9], profit = [20,20,100,70,60]
+Output: 150`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Sort by end time', 'DP with binary search for last non-overlapping job', 'dp[i] = max(dp[i-1], profit[i] + dp[last_non_overlapping])'],
+    expectedTopics: ['Dynamic Programming', 'Binary Search', 'Sorting'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-64',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Bus Routes',
+    description: `You are given an array routes representing bus routes where routes[i] is a bus route that the ith bus repeats forever.
+
+For example, if routes[0] = [1, 5, 7], this means that the 0th bus travels in the sequence 1 → 5 → 7 → 1 → 5 → 7 → ... forever.
+
+You will start at the bus stop source (You are not on any bus initially), and you want to go to the bus stop target. You can travel between bus stops by buses only.
+
+Return the least number of buses you must take to travel from source to target. Return -1 if it is not possible.
+
+Example 1:
+Input: routes = [[1,2,7],[3,6,7]], source = 1, target = 6
+Output: 2
+Explanation: Take bus 0 from stop 1 to stop 7, then bus 1 from stop 7 to stop 6.
+
+Example 2:
+Input: routes = [[7,12],[4,5,15],[6],[15,19],[9,12,13]], source = 15, target = 12
+Output: -1`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['BFS on buses, not stops', 'Map each stop to list of buses serving it', 'Track visited buses and visited stops'],
+    expectedTopics: ['BFS', 'Graph', 'Hash Map'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-65',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Minimum Cost to Hire K Workers',
+    description: `There are n workers. You are given two arrays quality and wage where quality[i] is the quality of the ith worker and wage[i] is the minimum wage expectation of the ith worker.
+
+We want to hire exactly k workers to form a paid group. To hire a group of k workers, we must pay according to these rules:
+1. Every worker in the paid group should be paid in the ratio of their quality compared to other workers in the paid group.
+2. Every worker must be paid at least their minimum wage expectation.
+
+Given the integer k, return the least amount of money needed to form a paid group satisfying the above conditions.
+
+Example:
+Input: quality = [10,20,5], wage = [70,50,30], k = 2
+Output: 105.00000
+Explanation: We pay 70 to worker 0 and 35 to worker 2.`,
+    difficulty: 'Hard',
+    timeLimit: 35,
+    hints: ['Sort by wage/quality ratio', 'Use max-heap to track k smallest qualities', 'Cost = ratio * sum_of_qualities'],
+    expectedTopics: ['Heap', 'Greedy', 'Sorting'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-66',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Split Array Largest Sum',
+    description: `Given an integer array nums and an integer k, split nums into k non-empty subarrays such that the largest sum of any subarray is minimized.
+
+Return the minimized largest sum of the split.
+
+Example 1:
+Input: nums = [7,2,5,10,8], k = 2
+Output: 18
+Explanation: There are four ways to split nums into two subarrays. The best way is [7,2,5] and [10,8], where the largest sum is 18.
+
+Example 2:
+Input: nums = [1,2,3,4,5], k = 2
+Output: 9
+Explanation: [1,2,3] and [4,5] gives largest sum = 9.`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['Binary search on the answer (the largest sum)', 'Check if we can split into k parts with max sum <= mid', 'Greedy check: greedily fill each part'],
+    expectedTopics: ['Binary Search', 'Greedy', 'Dynamic Programming'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-67',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Shortest Path in a Grid with Obstacles Elimination',
+    description: `You are given an m x n integer matrix grid where each cell is either 0 (empty) or 1 (obstacle). You can move up, down, left, or right from and to an empty cell in one step.
+
+Return the minimum number of steps to walk from the upper left corner (0, 0) to the lower right corner (m - 1, n - 1) given that you can eliminate at most k obstacles. If it is not possible to find such walk return -1.
+
+Example 1:
+Input: grid = [[0,0,0],[1,1,0],[0,0,0],[0,1,1],[0,0,0]], k = 1
+Output: 6
+Explanation: The shortest path without eliminating any obstacles is 10. With one elimination, the shortest path is 6.
+
+Example 2:
+Input: grid = [[0,1,1],[1,1,1],[1,0,0]], k = 1
+Output: -1`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['BFS with state = (row, col, remaining_eliminations)', 'Track visited with 3D array or map', 'Early termination if k >= m + n - 3'],
+    expectedTopics: ['BFS', 'Graph', 'Matrix'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-68',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Making A Large Island',
+    description: `You are given an n x n binary matrix grid. You are allowed to change at most one 0 to be 1.
+
+Return the size of the largest island in grid after applying this operation.
+
+An island is a 4-directionally connected group of 1s.
+
+Example 1:
+Input: grid = [[1,0],[0,1]]
+Output: 3
+Explanation: Change one 0 to 1 and connect two 1s, then we get an island with area = 3.
+
+Example 2:
+Input: grid = [[1,1],[1,0]]
+Output: 4
+Explanation: Change the 0 to 1 and make the island bigger, only one island with area = 4.
+
+Example 3:
+Input: grid = [[1,1],[1,1]]
+Output: 4`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['First label each island and compute its area', 'For each 0, sum adjacent island areas', 'Use set to avoid counting same island twice'],
+    expectedTopics: ['DFS', 'BFS', 'Union Find', 'Matrix'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-69',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Maximum Frequency Stack',
+    description: `Design a stack-like data structure to push elements to the stack and pop the most frequent element from the stack.
+
+Implement the FreqStack class:
+- FreqStack() constructs an empty frequency stack.
+- void push(int val) pushes an integer val onto the top of the stack.
+- int pop() removes and returns the most frequent element in the stack. If there is a tie, the element closest to the top of the stack is removed and returned.
+
+Example:
+Input: ["FreqStack", "push", "push", "push", "push", "push", "push", "pop", "pop", "pop", "pop"]
+[[], [5], [7], [5], [7], [4], [5], [], [], [], []]
+Output: [null, null, null, null, null, null, null, 5, 7, 5, 4]`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Track frequency of each element', 'Map from frequency to stack of elements with that frequency', 'Track max frequency'],
+    expectedTopics: ['Stack', 'Hash Map', 'Design'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-70',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Minimum Operations to Make Array Continuous',
+    description: `You are given an integer array nums. In one operation, you can replace any element in nums with any integer.
+
+nums is considered continuous if both of the following conditions are fulfilled:
+- All elements in nums are unique.
+- The difference between the maximum and minimum elements equals nums.length - 1.
+
+Return the minimum number of operations to make nums continuous.
+
+Example 1:
+Input: nums = [4,2,5,3]
+Output: 0
+Explanation: [4,2,5,3] is already continuous.
+
+Example 2:
+Input: nums = [1,2,3,5,6]
+Output: 1
+Explanation: Replace 6 with 4 to get [1,2,3,5,4], which is continuous.
+
+Example 3:
+Input: nums = [1,10,100,1000]
+Output: 3`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Sort and remove duplicates', 'Sliding window to find max elements in range [x, x + n - 1]', 'Answer = n - max_elements_in_valid_range'],
+    expectedTopics: ['Sliding Window', 'Binary Search', 'Sorting'],
+    yearAsked: 2025,
     frequency: 'High'
   },
   
