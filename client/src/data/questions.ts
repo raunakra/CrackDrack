@@ -27,7 +27,7 @@ export const companies: Company[] = [
     bgGradient: 'from-orange-500 to-orange-700',
     description: 'Leadership Principles obsession, customer focus, system design',
     categories: [
-      { id: 'coding', name: 'Coding', type: 'coding', timeLimit: 45, questionCount: 15, icon: '💻' },
+      { id: 'coding', name: 'Coding', type: 'coding', timeLimit: 45, questionCount: 20, icon: '💻' },
       { id: 'system-design', name: 'System Design', type: 'system-design', timeLimit: 60, questionCount: 10, icon: '🏗️' },
       { id: 'leadership-principles', name: 'Leadership Principles', type: 'behavioral', timeLimit: 45, questionCount: 16, icon: '⭐' },
       { id: 'bar-raiser', name: 'Bar Raiser', type: 'behavioral', timeLimit: 45, questionCount: 8, icon: '📊' },
@@ -59,7 +59,7 @@ export const companies: Company[] = [
     bgGradient: 'from-gray-800 to-black',
     description: 'Real-time systems, distributed computing, geo-spatial problems',
     categories: [
-      { id: 'coding', name: 'Coding', type: 'coding', timeLimit: 45, questionCount: 12, icon: '💻' },
+      { id: 'coding', name: 'Coding', type: 'coding', timeLimit: 45, questionCount: 15, icon: '💻' },
       { id: 'system-design', name: 'System Design', type: 'system-design', timeLimit: 60, questionCount: 10, icon: '🏗️' },
       { id: 'real-time', name: 'Real-time Systems', type: 'technical', timeLimit: 45, questionCount: 8, icon: '⚡' },
       { id: 'behavioral', name: 'Behavioral', type: 'behavioral', timeLimit: 30, questionCount: 8, icon: '🎯' },
@@ -2109,6 +2109,403 @@ Follow-up: What if the grid is too large to fit in memory?`,
     yearAsked: 2024,
     frequency: 'High'
   },
+  {
+    id: 'a-code-4',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'LRU Cache',
+    description: `Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
+
+Implement the LRUCache class:
+- LRUCache(int capacity) Initialize the LRU cache with positive size capacity.
+- int get(int key) Return the value of the key if exists, otherwise return -1.
+- void put(int key, int value) Update the value of the key if exists. Otherwise, add the key-value pair. If the number of keys exceeds capacity, evict the least recently used key.
+
+The functions get and put must each run in O(1) average time complexity.
+
+Example:
+Input: ["LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"]
+[[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]
+Output: [null, null, null, 1, null, -1, null, -1, 3, 4]`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['HashMap + Doubly Linked List', 'Move accessed nodes to front'],
+    expectedTopics: ['Design', 'Hash Map', 'Linked List'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-5',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Warehouse Robot Path',
+    description: `Amazon's warehouse robots need to navigate from their current position to a pickup location avoiding obstacles.
+
+Given a 2D grid where:
+- 0 represents empty space
+- 1 represents an obstacle
+- 'S' represents the robot's starting position
+- 'E' represents the destination
+
+Return the shortest path length. If no path exists, return -1.
+
+Bonus: Return the actual path taken.
+
+Example:
+Input: grid = [
+  ['S', 0, 0, 0],
+  [1, 1, 0, 1],
+  [0, 0, 0, 0],
+  [0, 1, 1, 'E']
+]
+Output: 7`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['BFS for shortest path in unweighted graph', 'Track parent pointers for path reconstruction'],
+    expectedTopics: ['BFS', 'Matrix', 'Graph'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-6',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Minimum Cost to Connect All Warehouses',
+    description: `Amazon has n warehouses. You're given the positions of these warehouses as 2D coordinates.
+
+You need to connect all warehouses with minimum total cable length. The cost of connecting two warehouses is the Manhattan distance between them.
+
+Return the minimum cost to connect all warehouses.
+
+Example:
+Input: warehouses = [[0,0], [2,2], [3,10], [5,2], [7,0]]
+Output: 20
+
+Constraints:
+- 1 <= n <= 1000
+- 0 <= x, y <= 10^6`,
+    difficulty: 'Medium',
+    timeLimit: 30,
+    hints: ['Minimum Spanning Tree problem', 'Use Prim\'s or Kruskal\'s algorithm', 'For dense graphs, Prim\'s with priority queue is efficient'],
+    expectedTopics: ['Graph', 'MST', 'Prim', 'Kruskal', 'Union Find'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-7',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Optimal Package Loading',
+    description: `Amazon delivery trucks have limited capacity. Given a list of package weights and a truck capacity, find the maximum number of packages that can be loaded.
+
+Additionally, if two combinations have the same number of packages, prefer the one with higher total weight (fuller truck).
+
+Example:
+Input: weights = [3, 1, 2, 5, 4, 7], capacity = 10
+Output: 4 (packages with weights [1, 2, 3, 4] = 10)
+
+Follow-up: What if each package also has a priority value, and you want to maximize priority sum within capacity?`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['Sort weights ascending', 'Greedy selection for max count', 'For follow-up: 0/1 Knapsack DP'],
+    expectedTopics: ['Greedy', 'Sorting', 'Dynamic Programming', 'Knapsack'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-8',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Prime Delivery Scheduling',
+    description: `Amazon Prime promises delivery within specific time windows. Given a list of delivery requests with start and end times, and a number of available drivers, determine if all deliveries can be completed.
+
+Each delivery takes exactly 1 hour and a driver can only do one delivery at a time.
+
+Input:
+- deliveries: [[start1, end1], [start2, end2], ...]
+- drivers: number of available drivers
+
+Output: true if all deliveries can be scheduled, false otherwise
+
+Example:
+Input: deliveries = [[0,2], [1,3], [2,4], [3,5], [4,6]], drivers = 2
+Output: true
+
+Example 2:
+Input: deliveries = [[0,1], [0,1], [0,1]], drivers = 2
+Output: false`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['Similar to Meeting Rooms II', 'Min heap to track driver availability', 'Or event-based simulation'],
+    expectedTopics: ['Heap', 'Greedy', 'Sorting', 'Intervals'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-9',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Search Suggestions System',
+    description: `You are given an array of strings products and a string searchWord. Design a system that suggests at most three product names from products after each character of searchWord is typed.
+
+Suggested products should have common prefix with searchWord. If there are more than three products with a common prefix return the three lexicographically minimum products.
+
+Return a list of lists of the suggested products after each character of searchWord is typed.
+
+Example:
+Input: products = ["mobile","mouse","moneypot","monitor","mousepad"], searchWord = "mouse"
+Output: [["mobile","moneypot","monitor"],["mobile","moneypot","monitor"],["mouse","mousepad"],["mouse","mousepad"],["mouse","mousepad"]]`,
+    difficulty: 'Medium',
+    timeLimit: 30,
+    hints: ['Sort products first', 'Binary search for prefix', 'Or build a Trie for efficient prefix search'],
+    expectedTopics: ['Trie', 'Binary Search', 'Sorting', 'String'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-10',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'K Closest Points to Origin',
+    description: `Given an array of points where points[i] = [xi, yi] represents a point on the X-Y plane and an integer k, return the k closest points to the origin (0, 0).
+
+The distance between two points is the Euclidean distance: sqrt((x1-x2)^2 + (y1-y2)^2).
+
+You may return the answer in any order.
+
+Example 1:
+Input: points = [[1,3],[-2,2]], k = 1
+Output: [[-2,2]]
+
+Example 2:
+Input: points = [[3,3],[5,-1],[-2,4]], k = 2
+Output: [[3,3],[-2,4]]`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Max heap of size k', 'Or quickselect for O(n) average', 'No need for sqrt in comparison'],
+    expectedTopics: ['Heap', 'Quickselect', 'Sorting'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-11',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Reorder Data in Log Files',
+    description: `You are given an array of logs. Each log is a space-delimited string of words, where the first word is the identifier.
+
+There are two types of logs:
+- Letter-logs: All words (except the identifier) consist of lowercase English letters.
+- Digit-logs: All words (except the identifier) consist of digits.
+
+Reorder so that:
+1. Letter-logs come before all digit-logs.
+2. Letter-logs are sorted lexicographically by content, then by identifier if content is the same.
+3. Digit-logs maintain their relative order.
+
+Example:
+Input: logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"]
+Output: ["let1 art can","let3 art zero","let2 own kit dig","dig1 8 1 5 1","dig2 3 6"]`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Custom comparator', 'Separate letter and digit logs', 'Stable sort for digit logs'],
+    expectedTopics: ['Sorting', 'String', 'Custom Comparator'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-12',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Trapping Rain Water',
+    description: `Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
+
+Example:
+Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6
+
+Example 2:
+Input: height = [4,2,0,3,2,5]
+Output: 9`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['Two pointers approach', 'Or use monotonic stack', 'Or precompute left max and right max'],
+    expectedTopics: ['Two Pointers', 'Stack', 'Dynamic Programming', 'Array'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-13',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Word Ladder',
+    description: `A transformation sequence from word beginWord to word endWord using a dictionary wordList is a sequence of words beginWord -> s1 -> s2 -> ... -> sk such that:
+- Every adjacent pair of words differs by a single letter.
+- Every si is in wordList. Note that beginWord does not need to be in wordList.
+- sk == endWord
+
+Given two words, beginWord and endWord, and a dictionary wordList, return the number of words in the shortest transformation sequence from beginWord to endWord, or 0 if no such sequence exists.
+
+Example:
+Input: beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]
+Output: 5
+Explanation: "hit" -> "hot" -> "dot" -> "dog" -> "cog"`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['BFS to find shortest path', 'Preprocess words into pattern buckets', 'Bidirectional BFS for optimization'],
+    expectedTopics: ['BFS', 'Graph', 'Hash Map'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-14',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Merge k Sorted Lists',
+    description: `You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
+
+Merge all the linked-lists into one sorted linked-list and return it.
+
+Example:
+Input: lists = [[1,4,5],[1,3,4],[2,6]]
+Output: [1,1,2,3,4,4,5,6]`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['Use a min-heap/priority queue', 'Or divide and conquer (merge pairs)'],
+    expectedTopics: ['Heap', 'Linked List', 'Divide and Conquer'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-15',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Copy List with Random Pointer',
+    description: `A linked list of length n is given such that each node contains an additional random pointer, which could point to any node in the list, or null.
+
+Construct a deep copy of the list. The deep copy should consist of exactly n brand new nodes.
+
+Return the head of the copied linked list.
+
+Example:
+Input: head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
+Output: [[7,null],[13,0],[11,4],[10,2],[1,0]]`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['HashMap: old node -> new node', 'Or interleave: A->A\'->B->B\' then separate'],
+    expectedTopics: ['Hash Map', 'Linked List'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-16',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Sliding Window Maximum',
+    description: `You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
+
+Return the max sliding window.
+
+Example:
+Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
+Output: [3,3,5,5,6,7]`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['Monotonic decreasing deque', 'Store indices in deque'],
+    expectedTopics: ['Sliding Window', 'Monotonic Deque', 'Heap'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-17',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Word Search II',
+    description: `Given an m x n board of characters and a list of strings words, return all words on the board.
+
+Each word must be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once in a word.
+
+Example:
+Input: board = [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]], words = ["oath","pea","eat","rain"]
+Output: ["eat","oath"]`,
+    difficulty: 'Hard',
+    timeLimit: 35,
+    hints: ['Build a Trie from words', 'DFS from each cell with Trie pruning', 'Remove found words from Trie for optimization'],
+    expectedTopics: ['Trie', 'DFS', 'Backtracking', 'Matrix'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-18',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Maximum Profit in Job Scheduling',
+    description: `We have n jobs, where every job is scheduled to be done from startTime[i] to endTime[i], obtaining a profit of profit[i].
+
+Return the maximum profit you can take such that there are no two jobs with overlapping time range.
+
+Example:
+Input: startTime = [1,2,3,3], endTime = [3,4,5,6], profit = [50,10,40,70]
+Output: 120
+
+Example 2:
+Input: startTime = [1,2,3,4,6], endTime = [3,5,10,6,9], profit = [20,20,100,70,60]
+Output: 150`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Sort by end time', 'DP with binary search for last non-overlapping job'],
+    expectedTopics: ['Dynamic Programming', 'Binary Search', 'Sorting'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-19',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Reorganize String',
+    description: `Given a string s, rearrange the characters of s so that any two adjacent characters are not the same.
+
+Return any possible rearrangement of s or return "" if not possible.
+
+Example 1:
+Input: s = "aab"
+Output: "aba"
+
+Example 2:
+Input: s = "aaab"
+Output: ""`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Max heap with (count, char) pairs', 'Alternating placement', 'Check if max count > (n+1)/2'],
+    expectedTopics: ['Heap', 'Greedy', 'Hash Map', 'String'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'a-code-20',
+    companyId: 'amazon',
+    categoryId: 'coding',
+    title: 'Design In-Memory File System',
+    description: `Design a data structure that simulates an in-memory file system.
+
+Implement the FileSystem class:
+- FileSystem() Initializes the object.
+- List<String> ls(String path) Returns list of file/directory names in given path. If path is a file, returns just that file name. Sort in lexicographic order.
+- void mkdir(String path) Makes a new directory according to the given path. Creates intermediate directories if they don't exist.
+- void addContentToFile(String filePath, String content) Creates a new file if path doesn't exist, or appends content if it does.
+- String readContentFromFile(String filePath) Returns the content in the file.
+
+Example:
+Input: ["FileSystem","ls","mkdir","addContentToFile","ls","readContentFromFile"]
+[[],["/"],["/a/b/c"],["/a/b/c/d","hello"],["/"],["/a/b/c/d"]]
+Output: [null,[],null,null,["a"],"hello"]`,
+    difficulty: 'Hard',
+    timeLimit: 35,
+    hints: ['Trie-like structure with file/directory nodes', 'Store content only for files', 'Path parsing with split'],
+    expectedTopics: ['Design', 'Trie', 'Hash Map', 'String'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
 
   // Amazon System Design
   {
@@ -2316,6 +2713,272 @@ Implement this in your preferred language.`,
     yearAsked: 2024,
     frequency: 'Medium'
   },
+  {
+    id: 's-code-3',
+    companyId: 'salesforce',
+    categoryId: 'coding',
+    title: 'Batch Processing Engine',
+    description: `Salesforce processes millions of records using batch jobs. Design a batch processing system.
+
+Requirements:
+- Process records in configurable batch sizes (default 200)
+- Handle failures gracefully (continue processing on error)
+- Track progress and provide status updates
+- Support pause/resume functionality
+- Implement retry logic for failed batches
+
+Implement the core BatchProcessor class with the following methods:
+- start(records, batchSize)
+- pause()
+- resume()
+- getStatus()
+- getFailedRecords()`,
+    difficulty: 'Medium',
+    timeLimit: 35,
+    hints: ['Use state machine for batch states', 'Consider async processing', 'Store failed records for retry'],
+    expectedTopics: ['Batch Processing', 'State Management', 'Error Handling', 'Design'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 's-code-4',
+    companyId: 'salesforce',
+    categoryId: 'coding',
+    title: 'SOQL Query Builder',
+    description: `Build a type-safe SOQL query builder that prevents injection attacks and validates field references.
+
+Requirements:
+- Chainable API for building queries
+- Support SELECT, FROM, WHERE, ORDER BY, LIMIT
+- Validate field names against a schema
+- Prevent SOQL injection
+- Support nested queries
+
+Example Usage:
+const query = new SOQLBuilder('Account')
+  .select(['Id', 'Name', 'Industry'])
+  .where('Industry', '=', 'Technology')
+  .orderBy('Name', 'ASC')
+  .limit(100)
+  .build();
+// Returns: "SELECT Id, Name, Industry FROM Account WHERE Industry = 'Technology' ORDER BY Name ASC LIMIT 100"`,
+    difficulty: 'Medium',
+    timeLimit: 30,
+    hints: ['Builder pattern', 'Whitelist valid field names', 'Escape string values'],
+    expectedTopics: ['Builder Pattern', 'Security', 'String Manipulation'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 's-code-5',
+    companyId: 'salesforce',
+    categoryId: 'coding',
+    title: 'Trigger Handler Framework',
+    description: `Design a trigger handler framework that follows Salesforce best practices.
+
+Requirements:
+- One trigger per object calling a handler class
+- Support all trigger contexts (before/after insert/update/delete/undelete)
+- Prevent recursive trigger execution
+- Allow bypassing triggers programmatically
+- Support multiple handler methods per context
+
+Implement the base TriggerHandler class that concrete handlers will extend.`,
+    difficulty: 'Medium',
+    timeLimit: 30,
+    hints: ['Template method pattern', 'Static recursion counter', 'Map of bypass settings'],
+    expectedTopics: ['Design Patterns', 'Salesforce Best Practices', 'OOP'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 's-code-6',
+    companyId: 'salesforce',
+    categoryId: 'coding',
+    title: 'Rate Limiter',
+    description: `Design a rate limiter for API calls that Salesforce makes to external services.
+
+Requirements:
+- Limit requests per second/minute/hour
+- Support multiple rate limit tiers
+- Thread-safe implementation
+- Return time until next available slot when limited
+- Support burst capacity
+
+Example:
+const limiter = new RateLimiter({
+  requestsPerSecond: 10,
+  requestsPerMinute: 100,
+  burstCapacity: 20
+});
+
+limiter.tryAcquire(); // true/false
+limiter.waitForPermit(); // blocks until available`,
+    difficulty: 'Hard',
+    timeLimit: 35,
+    hints: ['Token bucket or sliding window algorithm', 'Consider using timestamps', 'Handle edge cases with time window boundaries'],
+    expectedTopics: ['Rate Limiting', 'Concurrency', 'Token Bucket', 'Design'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 's-code-7',
+    companyId: 'salesforce',
+    categoryId: 'coding',
+    title: 'LRU Cache with TTL',
+    description: `Implement an LRU (Least Recently Used) Cache with Time-To-Live (TTL) support.
+
+Requirements:
+- Fixed capacity cache
+- O(1) get and put operations
+- Entries expire after TTL
+- Evict least recently used when at capacity
+- Support cache statistics (hits, misses, evictions)
+
+Example:
+const cache = new LRUCacheWithTTL(capacity=100, defaultTTL=3600);
+cache.put('key1', 'value1');
+cache.put('key2', 'value2', ttl=60); // custom TTL
+cache.get('key1'); // returns 'value1', updates access time
+cache.getStats(); // { hits: 1, misses: 0, evictions: 0 }`,
+    difficulty: 'Medium',
+    timeLimit: 30,
+    hints: ['HashMap + Doubly Linked List', 'Store expiry timestamp with each entry', 'Lazy expiration on access'],
+    expectedTopics: ['Cache', 'Linked List', 'Hash Map', 'Design'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 's-code-8',
+    companyId: 'salesforce',
+    categoryId: 'coding',
+    title: 'Event Bus Implementation',
+    description: `Implement a publish-subscribe event bus for decoupled communication between components.
+
+Requirements:
+- Subscribe to events by topic
+- Publish events to all subscribers
+- Support wildcard subscriptions (e.g., 'account.*')
+- Async and sync delivery modes
+- Unsubscribe capability
+- Dead letter queue for failed deliveries
+
+Example:
+const bus = new EventBus();
+bus.subscribe('account.created', handler1);
+bus.subscribe('account.*', handler2); // wildcard
+bus.publish('account.created', { id: '123', name: 'Acme' });`,
+    difficulty: 'Medium',
+    timeLimit: 30,
+    hints: ['Map of topic to subscriber list', 'Regex or prefix matching for wildcards', 'Consider retry logic'],
+    expectedTopics: ['Pub/Sub', 'Design Patterns', 'Event-Driven Architecture'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 's-code-9',
+    companyId: 'salesforce',
+    categoryId: 'coding',
+    title: 'Merge Intervals with Labels',
+    description: `Given a list of time intervals with associated labels (like Salesforce business hours), merge overlapping intervals and combine their labels.
+
+Example:
+Input: [
+  { start: 9, end: 12, labels: ['sales'] },
+  { start: 10, end: 14, labels: ['support'] },
+  { start: 15, end: 17, labels: ['sales'] }
+]
+Output: [
+  { start: 9, end: 14, labels: ['sales', 'support'] },
+  { start: 15, end: 17, labels: ['sales'] }
+]
+
+Handle edge cases: adjacent intervals, single point intervals, empty input.`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['Sort by start time', 'Track current merged interval', 'Combine labels on overlap'],
+    expectedTopics: ['Intervals', 'Sorting', 'Array'],
+    yearAsked: 2025,
+    frequency: 'Medium'
+  },
+  {
+    id: 's-code-10',
+    companyId: 'salesforce',
+    categoryId: 'coding',
+    title: 'Dependency Injection Container',
+    description: `Implement a simple dependency injection container similar to what Salesforce uses internally.
+
+Requirements:
+- Register dependencies with a key
+- Support singleton and transient lifetimes
+- Resolve dependencies by key
+- Handle circular dependency detection
+- Support constructor injection
+
+Example:
+const container = new DIContainer();
+container.register('logger', Logger, 'singleton');
+container.register('service', MyService, 'transient', ['logger']);
+const service = container.resolve('service');`,
+    difficulty: 'Hard',
+    timeLimit: 35,
+    hints: ['Use a registry map', 'Track resolution stack for circular detection', 'Factory functions for transient'],
+    expectedTopics: ['Dependency Injection', 'Design Patterns', 'OOP'],
+    yearAsked: 2025,
+    frequency: 'Medium'
+  },
+  {
+    id: 's-code-11',
+    companyId: 'salesforce',
+    categoryId: 'coding',
+    title: 'Field-Level Security Checker',
+    description: `Implement a field-level security (FLS) checker that determines if a user can access specific fields.
+
+Given:
+- User's profile/permission sets
+- Object permissions (CRUD)
+- Field permissions (Read/Edit)
+
+Implement:
+- canRead(objectName, fieldName)
+- canEdit(objectName, fieldName)
+- getAccessibleFields(objectName)
+- checkBulkAccess(objectName, fieldNames)
+
+Handle inheritance where permission sets extend profiles.`,
+    difficulty: 'Medium',
+    timeLimit: 30,
+    hints: ['Combine permissions from profile + permission sets', 'Cache permission calculations', 'Use sets for efficient lookup'],
+    expectedTopics: ['Security', 'Authorization', 'Data Structures'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 's-code-12',
+    companyId: 'salesforce',
+    categoryId: 'coding',
+    title: 'Serialize and Deserialize N-ary Tree',
+    description: `Design an algorithm to serialize and deserialize an N-ary tree. An N-ary tree is a tree where each node can have any number of children.
+
+Example:
+       1
+     / | \\
+    3  2  4
+   / \\
+  5   6
+
+Serialized: "1[3[5,6],2,4]" or any format that works
+
+Implement:
+- serialize(root): returns string
+- deserialize(data): returns root node`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['Preorder traversal with child count', 'Use delimiters to separate nodes and children', 'Recursive parsing for deserialize'],
+    expectedTopics: ['Tree', 'Recursion', 'String', 'Serialization'],
+    yearAsked: 2025,
+    frequency: 'Medium'
+  },
 
   // Salesforce System Design
   {
@@ -2469,6 +3132,303 @@ Provide the class structure and key method implementations.`,
     hints: ['Consider a scoring function for matching', 'Think about the state machine for ride status'],
     expectedTopics: ['System Design', 'Algorithms', 'State Management'],
     yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'u-code-4',
+    companyId: 'uber',
+    categoryId: 'coding',
+    title: 'Geohash Implementation',
+    description: `Implement a Geohash encoder/decoder for Uber's location services.
+
+Geohash is a geocoding system that encodes geographic coordinates into a short string. Nearby locations share similar prefixes.
+
+Implement:
+- encode(latitude, longitude, precision) -> string
+- decode(geohash) -> { lat, lng, error }
+- getNeighbors(geohash) -> string[] (8 neighboring cells)
+- getBoundingBox(geohash) -> { minLat, maxLat, minLng, maxLng }
+
+Example:
+encode(37.7749, -122.4194, 6) -> "9q8yyk"
+decode("9q8yyk") -> { lat: 37.774, lng: -122.419, error: 0.001 }`,
+    difficulty: 'Hard',
+    timeLimit: 40,
+    hints: ['Interleave latitude and longitude bits', 'Use base32 encoding', 'Precision determines string length'],
+    expectedTopics: ['Geospatial', 'Bit Manipulation', 'Encoding'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'u-code-5',
+    companyId: 'uber',
+    categoryId: 'coding',
+    title: 'ETA Prediction with Traffic',
+    description: `Implement an ETA calculation system that accounts for real-time traffic conditions.
+
+Given:
+- Road network as a weighted graph (edge weight = base travel time)
+- Traffic multipliers for each edge (1.0 = normal, 2.0 = 2x slower)
+- Start and end locations
+
+Implement:
+- calculateETA(start, end, trafficData) -> minutes
+- findFastestRoute(start, end, trafficData) -> path[]
+- getAlternativeRoutes(start, end, trafficData, k) -> path[][] (top k routes)
+
+Example:
+Graph: A --5min--> B --10min--> C
+Traffic: { 'A-B': 1.5, 'B-C': 2.0 }
+ETA from A to C = 5*1.5 + 10*2.0 = 27.5 minutes`,
+    difficulty: 'Hard',
+    timeLimit: 35,
+    hints: ['Modified Dijkstra with traffic weights', 'Yen\'s algorithm for k-shortest paths', 'Consider caching for common routes'],
+    expectedTopics: ['Graph', 'Dijkstra', 'Shortest Path', 'Real-time Systems'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'u-code-6',
+    companyId: 'uber',
+    categoryId: 'coding',
+    title: 'Optimal Meeting Point',
+    description: `Given multiple people's locations, find the optimal meeting point that minimizes total travel time (like UberPool pickup optimization).
+
+Example:
+People at: [(0,0), (2,2), (4,0)]
+Using Manhattan distance, optimal point minimizes sum of distances.
+
+Implement:
+- findOptimalPoint(locations) -> { x, y }
+- findOptimalPointWeighted(locations, weights) -> { x, y }
+- findOptimalAmongCandidates(locations, candidates) -> candidate
+
+For weighted version, each person has an importance weight.`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['For Manhattan distance, x and y are independent', 'Optimal x is the weighted median of x-coordinates', 'Same for y'],
+    expectedTopics: ['Geometry', 'Median', 'Optimization'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'u-code-7',
+    companyId: 'uber',
+    categoryId: 'coding',
+    title: 'Time-based Key-Value Store',
+    description: `Design a time-based key-value data structure that can store multiple values for the same key at different timestamps and retrieve the value at a certain timestamp.
+
+Implement the TimeMap class:
+- set(key, value, timestamp): Stores the key with the value at the given timestamp.
+- get(key, timestamp): Returns a value such that set was called previously with timestamp_prev <= timestamp. If there are multiple such values, return the one with the largest timestamp_prev. If there are no values, return "".
+
+Example:
+timeMap.set("foo", "bar", 1);
+timeMap.get("foo", 1);         // returns "bar"
+timeMap.get("foo", 3);         // returns "bar"
+timeMap.set("foo", "bar2", 4);
+timeMap.get("foo", 4);         // returns "bar2"
+timeMap.get("foo", 5);         // returns "bar2"`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['HashMap of key to list of (timestamp, value)', 'Binary search for the right timestamp'],
+    expectedTopics: ['Binary Search', 'Hash Map', 'Design'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'u-code-8',
+    companyId: 'uber',
+    categoryId: 'coding',
+    title: 'Driver Availability Tracker',
+    description: `Design a system to track driver availability across different time slots for scheduling purposes.
+
+Requirements:
+- Drivers can set their available hours
+- Query which drivers are available at a given time
+- Find time slots when minimum N drivers are available
+- Handle recurring schedules (weekly patterns)
+
+Implement:
+- setAvailability(driverId, dayOfWeek, startHour, endHour)
+- getAvailableDrivers(dayOfWeek, hour) -> driverId[]
+- findSlotsWithMinDrivers(minDrivers, dayOfWeek) -> timeSlots[]
+- getDriverSchedule(driverId) -> schedule`,
+    difficulty: 'Medium',
+    timeLimit: 30,
+    hints: ['Interval tree or segment array per day', 'Count drivers per hour slot', 'Handle overlapping intervals'],
+    expectedTopics: ['Intervals', 'Data Structures', 'Design'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'u-code-9',
+    companyId: 'uber',
+    categoryId: 'coding',
+    title: 'Ride Price Estimator',
+    description: `Implement a ride price estimation system with multiple factors.
+
+Factors affecting price:
+- Base fare
+- Per-mile rate (varies by vehicle type)
+- Per-minute rate
+- Surge multiplier
+- Tolls (if any on route)
+- Airport fees (if applicable)
+- Booking fee
+
+Implement:
+- estimatePrice(pickup, dropoff, vehicleType, currentTime) -> { min, max, breakdown }
+- applyPromoCode(estimate, promoCode) -> adjustedEstimate
+- compareVehicleTypes(pickup, dropoff) -> comparison[]`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['Strategy pattern for different vehicle types', 'Use dependency injection for rate fetching', 'Return price range, not exact'],
+    expectedTopics: ['OOP', 'Design Patterns', 'Business Logic'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'u-code-10',
+    companyId: 'uber',
+    categoryId: 'coding',
+    title: 'Minimum Fuel Cost to Report to Capital',
+    description: `There is a tree (connected graph with no cycles) structure rooted at node 0 with n nodes. You are given a 2D integer array roads where roads[i] = [ai, bi] indicates a road between cities ai and bi.
+
+Each city has representatives that need to travel to city 0 (capital). There is one representative in each city.
+
+Traveling between two adjacent cities costs 1 liter of fuel.
+
+Given an integer seats (the number of seats in each car), return the minimum number of liters of fuel to reach the capital.
+
+Example:
+Input: roads = [[0,1],[0,2],[0,3]], seats = 5
+Output: 3
+Explanation: Representative from each city drives their own car to city 0.
+
+Example 2:
+Input: roads = [[3,1],[3,2],[1,0],[0,4],[0,5],[4,6]], seats = 2
+Output: 7`,
+    difficulty: 'Medium',
+    timeLimit: 30,
+    hints: ['DFS from root, count representatives from each subtree', 'Calculate cars needed at each node', 'Ceil(representatives / seats) cars needed'],
+    expectedTopics: ['Tree', 'DFS', 'Greedy'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'u-code-11',
+    companyId: 'uber',
+    categoryId: 'coding',
+    title: 'Number of Flowers in Full Bloom',
+    description: `You are given a 0-indexed 2D integer array flowers, where flowers[i] = [starti, endi] means the ith flower is in full bloom from starti to endi (inclusive). You are also given a 0-indexed integer array people of size n, where people[i] is the time at which the ith person arrives to see the flowers.
+
+Return an integer array answer of size n, where answer[i] is the number of flowers that are in full bloom when the ith person arrives.
+
+Example:
+Input: flowers = [[1,6],[3,7],[9,12],[4,13]], people = [2,3,7,11]
+Output: [1,2,2,2]
+Explanation: 
+- Person 0 arrives at time 2: flower 0 is in bloom.
+- Person 1 arrives at time 3: flowers 0, 1 are in bloom.
+- Person 2 arrives at time 7: flowers 1, 3 are in bloom.
+- Person 3 arrives at time 11: flowers 2, 3 are in bloom.`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Separate start and end events', 'Binary search for starts before and ends before each person', 'Or use coordinate compression + prefix sum'],
+    expectedTopics: ['Binary Search', 'Sorting', 'Prefix Sum'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'u-code-12',
+    companyId: 'uber',
+    categoryId: 'coding',
+    title: 'Detonate the Maximum Bombs',
+    description: `You are given a list of bombs. The range of a bomb is defined as the area where its effect can be felt. Each bomb can detonate other bombs within its range, causing a chain reaction.
+
+You are given a 2D array bombs where bombs[i] = [xi, yi, ri]. xi and yi denote the X and Y coordinates of the ith bomb, and ri is its radius.
+
+Return the maximum number of bombs that can be detonated if you choose to detonate only one bomb.
+
+Example:
+Input: bombs = [[2,1,3],[6,1,4]]
+Output: 2
+Explanation: Detonating bomb at [2,1] will trigger bomb at [6,1] (distance 4 <= radius 4 of bomb at [6,1]).
+
+Example 2:
+Input: bombs = [[1,1,5],[10,10,5]]
+Output: 1`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['Build directed graph: edge from A to B if A can reach B', 'For each bomb, BFS/DFS to count reachable bombs', 'Return maximum count'],
+    expectedTopics: ['Graph', 'BFS', 'DFS', 'Geometry'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'u-code-13',
+    companyId: 'uber',
+    categoryId: 'coding',
+    title: 'Shortest Path in a Grid with Obstacles Elimination',
+    description: `You are given an m x n integer matrix grid where each cell is either 0 (empty) or 1 (obstacle). You can move up, down, left, or right from and to an empty cell in one step.
+
+Return the minimum number of steps to walk from the upper left corner (0, 0) to the lower right corner (m - 1, n - 1) given that you can eliminate at most k obstacles. If it is not possible, return -1.
+
+Example:
+Input: grid = [[0,0,0],[1,1,0],[0,0,0],[0,1,1],[0,0,0]], k = 1
+Output: 6
+
+Example 2:
+Input: grid = [[0,1,1],[1,1,1],[1,0,0]], k = 1
+Output: -1`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['BFS with state = (row, col, obstacles_remaining)', '3D visited array or map', 'Early termination if k >= m + n - 3'],
+    expectedTopics: ['BFS', 'Graph', 'Matrix', 'State Space Search'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'u-code-14',
+    companyId: 'uber',
+    categoryId: 'coding',
+    title: 'Minimum Time to Collect All Apples in a Tree',
+    description: `Given an undirected tree consisting of n vertices numbered from 0 to n-1, which has some apples in their vertices. You spend 1 second to walk over one edge of the tree. Return the minimum time to collect all apples and come back to vertex 0.
+
+The edges of the tree are given in the array edges where edges[i] = [ai, bi]. Additionally, there is a boolean array hasApple where hasApple[i] = true means vertex i has an apple.
+
+Example:
+Input: n = 7, edges = [[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]], hasApple = [false,false,true,false,true,true,false]
+Output: 8
+Explanation: The path: 0-1-4-1-5-1-0-2-3-2-0 takes 8 seconds.`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['DFS from root', 'If subtree has any apple, include edge cost (2 for round trip)', 'Return total cost from children + self'],
+    expectedTopics: ['Tree', 'DFS', 'Graph'],
+    yearAsked: 2025,
+    frequency: 'High'
+  },
+  {
+    id: 'u-code-15',
+    companyId: 'uber',
+    categoryId: 'coding',
+    title: 'Graph Connectivity After Edge Removal',
+    description: `You are given an undirected graph with n nodes and a list of edges. For each edge, determine if removing it would disconnect the graph (i.e., is it a bridge).
+
+Also implement:
+- findBridges() -> edges that are bridges
+- isConnected() -> boolean
+- getConnectedComponents() -> number of components after all bridge removals
+
+Example:
+Input: n = 5, edges = [[0,1],[1,2],[2,0],[1,3],[3,4]]
+Output: bridges = [[1,3],[3,4]]`,
+    difficulty: 'Hard',
+    timeLimit: 35,
+    hints: ['Tarjan\'s algorithm for bridges', 'Track discovery time and low values', 'Edge is bridge if low[v] > disc[u]'],
+    expectedTopics: ['Graph', 'Tarjan', 'Bridge Detection', 'DFS'],
+    yearAsked: 2025,
     frequency: 'High'
   },
 
