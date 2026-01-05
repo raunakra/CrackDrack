@@ -11,7 +11,7 @@ export const companies: Company[] = [
     bgGradient: 'from-blue-600 to-blue-800',
     description: 'System design at scale, algorithmic thinking, and Googleyness',
     categories: [
-      { id: 'coding', name: 'Coding', type: 'coding', timeLimit: 45, questionCount: 15, icon: '💻' },
+      { id: 'coding', name: 'Coding', type: 'coding', timeLimit: 45, questionCount: 50, icon: '💻' },
       { id: 'system-design', name: 'System Design', type: 'system-design', timeLimit: 60, questionCount: 10, icon: '🏗️' },
       { id: 'behavioral', name: 'Googleyness & Leadership', type: 'behavioral', timeLimit: 30, questionCount: 12, icon: '🎯' },
       { id: 'phone-screen', name: 'Phone Screen', type: 'coding', timeLimit: 45, questionCount: 8, icon: '📱' },
@@ -184,6 +184,1185 @@ Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from
     timeLimit: 25,
     hints: ['Sliding window technique', 'Two pointers with character frequency map'],
     expectedTopics: ['Sliding Window', 'Hash Map', 'Two Pointers'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-6',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Merge k Sorted Lists',
+    description: `You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
+
+Merge all the linked-lists into one sorted linked-list and return it.
+
+Example:
+Input: lists = [[1,4,5],[1,3,4],[2,6]]
+Output: [1,1,2,3,4,4,5,6]
+Explanation: The linked-lists are:
+[1->4->5, 1->3->4, 2->6]
+merging them into one sorted list: 1->1->2->3->4->4->5->6
+
+Constraints:
+- k == lists.length
+- 0 <= k <= 10^4
+- 0 <= lists[i].length <= 500
+- -10^4 <= lists[i][j] <= 10^4`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['Use a min-heap/priority queue', 'Divide and conquer also works'],
+    expectedTopics: ['Heap', 'Linked List', 'Divide and Conquer', 'Merge Sort'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-7',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Trapping Rain Water',
+    description: `Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
+
+Example:
+Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6
+Explanation: The elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water are being trapped.
+
+Example 2:
+Input: height = [4,2,0,3,2,5]
+Output: 9`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['Two pointers approach', 'Or use monotonic stack', 'Or precompute left max and right max'],
+    expectedTopics: ['Two Pointers', 'Stack', 'Dynamic Programming', 'Array'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-8',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Longest Substring Without Repeating Characters',
+    description: `Given a string s, find the length of the longest substring without repeating characters.
+
+Example 1:
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+
+Example 2:
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+
+Example 3:
+Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Sliding window with a set/map', 'Track the start of current window'],
+    expectedTopics: ['Sliding Window', 'Hash Map', 'String'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-9',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Valid Parentheses',
+    description: `Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+1. Open brackets must be closed by the same type of brackets.
+2. Open brackets must be closed in the correct order.
+3. Every close bracket has a corresponding open bracket of the same type.
+
+Example 1:
+Input: s = "()"
+Output: true
+
+Example 2:
+Input: s = "()[]{}"
+Output: true
+
+Example 3:
+Input: s = "(]"
+Output: false`,
+    difficulty: 'Easy',
+    timeLimit: 15,
+    hints: ['Use a stack', 'Map closing brackets to opening brackets'],
+    expectedTopics: ['Stack', 'String'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-10',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Number of Islands',
+    description: `Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
+
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+
+Example 1:
+Input: grid = [
+  ["1","1","1","1","0"],
+  ["1","1","0","1","0"],
+  ["1","1","0","0","0"],
+  ["0","0","0","0","0"]
+]
+Output: 1
+
+Example 2:
+Input: grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+Output: 3`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['DFS or BFS from each unvisited land cell', 'Mark visited cells to avoid counting twice'],
+    expectedTopics: ['DFS', 'BFS', 'Union Find', 'Matrix'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-11',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Course Schedule II',
+    description: `There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.
+
+Return the ordering of courses you should take to finish all courses. If there are many valid answers, return any of them. If it is impossible to finish all courses, return an empty array.
+
+Example 1:
+Input: numCourses = 2, prerequisites = [[1,0]]
+Output: [0,1]
+Explanation: There are 2 courses. To take course 1 you should have finished course 0. So the correct order is [0,1].
+
+Example 2:
+Input: numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]]
+Output: [0,2,1,3] or [0,1,2,3]
+
+Example 3:
+Input: numCourses = 1, prerequisites = []
+Output: [0]`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['Topological sort using Kahn\'s algorithm (BFS)', 'Or use DFS with cycle detection'],
+    expectedTopics: ['Graph', 'Topological Sort', 'BFS', 'DFS'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-12',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Word Search II',
+    description: `Given an m x n board of characters and a list of strings words, return all words on the board.
+
+Each word must be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once in a word.
+
+Example:
+Input: board = [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]], words = ["oath","pea","eat","rain"]
+Output: ["eat","oath"]
+
+Constraints:
+- m == board.length, n == board[i].length
+- 1 <= m, n <= 12
+- 1 <= words.length <= 3 * 10^4
+- 1 <= words[i].length <= 10`,
+    difficulty: 'Hard',
+    timeLimit: 35,
+    hints: ['Build a Trie from words', 'DFS from each cell with Trie prefix checking', 'Optimize by removing found words from Trie'],
+    expectedTopics: ['Trie', 'DFS', 'Backtracking', 'Matrix'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-13',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Alien Dictionary',
+    description: `There is a new alien language that uses the English alphabet. However, the order of the letters is unknown to you.
+
+You are given a list of strings words from the alien language's dictionary, where the strings in words are sorted lexicographically by the rules of this new language.
+
+Return a string of the unique letters in the new alien language sorted in lexicographically increasing order by the new language's rules. If there is no solution, return "". If there are multiple solutions, return any of them.
+
+Example 1:
+Input: words = ["wrt","wrf","er","ett","rftt"]
+Output: "wertf"
+
+Example 2:
+Input: words = ["z","x"]
+Output: "zx"
+
+Example 3:
+Input: words = ["z","x","z"]
+Output: "" (cycle detected)`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Build a graph from adjacent word comparisons', 'Topological sort on the graph', 'Handle cycles and invalid inputs'],
+    expectedTopics: ['Graph', 'Topological Sort', 'BFS', 'DFS'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-14',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Longest Increasing Path in a Matrix',
+    description: `Given an m x n integers matrix, return the length of the longest increasing path in matrix.
+
+From each cell, you can either move in four directions: left, right, up, or down. You may not move diagonally or move outside the boundary.
+
+Example 1:
+Input: matrix = [[9,9,4],[6,6,8],[2,1,1]]
+Output: 4
+Explanation: The longest increasing path is [1, 2, 6, 9].
+
+Example 2:
+Input: matrix = [[3,4,5],[3,2,6],[2,2,1]]
+Output: 4
+Explanation: The longest increasing path is [3, 4, 5, 6].`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['DFS with memoization', 'No need for visited array since we only go to strictly larger values'],
+    expectedTopics: ['DFS', 'Dynamic Programming', 'Memoization', 'Matrix'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-15',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Find Median from Data Stream',
+    description: `The median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value, and the median is the mean of the two middle values.
+
+Implement the MedianFinder class:
+- MedianFinder() initializes the MedianFinder object.
+- void addNum(int num) adds the integer num from the data stream to the data structure.
+- double findMedian() returns the median of all elements so far.
+
+Example:
+Input: ["MedianFinder", "addNum", "addNum", "findMedian", "addNum", "findMedian"]
+[[], [1], [2], [], [3], []]
+Output: [null, null, null, 1.5, null, 2.0]
+
+Explanation:
+MedianFinder medianFinder = new MedianFinder();
+medianFinder.addNum(1);    // arr = [1]
+medianFinder.addNum(2);    // arr = [1, 2]
+medianFinder.findMedian(); // return 1.5 (i.e., (1 + 2) / 2)
+medianFinder.addNum(3);    // arr[1, 2, 3]
+medianFinder.findMedian(); // return 2.0`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['Use two heaps: max-heap for lower half, min-heap for upper half', 'Keep heaps balanced'],
+    expectedTopics: ['Heap', 'Design', 'Data Stream'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-16',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Regular Expression Matching',
+    description: `Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where:
+- '.' Matches any single character.
+- '*' Matches zero or more of the preceding element.
+
+The matching should cover the entire input string (not partial).
+
+Example 1:
+Input: s = "aa", p = "a"
+Output: false
+
+Example 2:
+Input: s = "aa", p = "a*"
+Output: true
+
+Example 3:
+Input: s = "ab", p = ".*"
+Output: true`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Dynamic programming with 2D table', 'Handle * by either using 0 occurrences or more'],
+    expectedTopics: ['Dynamic Programming', 'String', 'Recursion'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-17',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Wildcard Matching',
+    description: `Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for '?' and '*' where:
+- '?' Matches any single character.
+- '*' Matches any sequence of characters (including the empty sequence).
+
+The matching should cover the entire input string (not partial).
+
+Example 1:
+Input: s = "aa", p = "a"
+Output: false
+
+Example 2:
+Input: s = "aa", p = "*"
+Output: true
+
+Example 3:
+Input: s = "cb", p = "?a"
+Output: false`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['DP similar to regex matching', 'Or use two-pointer greedy approach'],
+    expectedTopics: ['Dynamic Programming', 'Greedy', 'String'],
+    yearAsked: 2023,
+    frequency: 'Medium'
+  },
+  {
+    id: 'g-code-18',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Sliding Window Maximum',
+    description: `You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
+
+Return the max sliding window.
+
+Example:
+Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
+Output: [3,3,5,5,6,7]
+Explanation: 
+Window position                Max
+---------------               -----
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
+
+Constraints:
+- 1 <= nums.length <= 10^5
+- -10^4 <= nums[i] <= 10^4
+- 1 <= k <= nums.length`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['Use monotonic decreasing deque', 'Store indices, not values'],
+    expectedTopics: ['Sliding Window', 'Monotonic Deque', 'Heap'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-19',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Basic Calculator II',
+    description: `Given a string s which represents an expression, evaluate this expression and return its value. 
+
+The integer division should truncate toward zero.
+
+You may assume that the given expression is always valid. All intermediate results will be in the range of [-2^31, 2^31 - 1].
+
+Note: You are not allowed to use any built-in function which evaluates strings as mathematical expressions.
+
+Example 1:
+Input: s = "3+2*2"
+Output: 7
+
+Example 2:
+Input: s = " 3/2 "
+Output: 1
+
+Example 3:
+Input: s = " 3+5 / 2 "
+Output: 5`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['Use a stack for numbers', 'Process * and / immediately, defer + and -'],
+    expectedTopics: ['Stack', 'String', 'Math'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-20',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Basic Calculator III',
+    description: `Implement a basic calculator to evaluate a simple expression string.
+
+The expression string contains only non-negative integers, '+', '-', '*', '/' operators, and open '(' and closing ')' parentheses. The integer division should truncate toward zero.
+
+You may assume that the given expression is always valid.
+
+Example 1:
+Input: s = "1+1"
+Output: 2
+
+Example 2:
+Input: s = "6-4/2"
+Output: 4
+
+Example 3:
+Input: s = "2*(5+5*2)/3+(6/2+8)"
+Output: 21`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Recursion for parentheses', 'Stack for operators', 'Or use two stacks: one for numbers, one for operators'],
+    expectedTopics: ['Stack', 'Recursion', 'String', 'Math'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-21',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Decode Ways',
+    description: `A message containing letters from A-Z can be encoded into numbers using the following mapping:
+'A' -> "1"
+'B' -> "2"
+...
+'Z' -> "26"
+
+To decode an encoded message, all the digits must be grouped then mapped back into letters using the reverse of the mapping above.
+
+Given a string s containing only digits, return the number of ways to decode it.
+
+Example 1:
+Input: s = "12"
+Output: 2
+Explanation: "12" could be decoded as "AB" (1 2) or "L" (12).
+
+Example 2:
+Input: s = "226"
+Output: 3
+Explanation: "226" could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
+
+Example 3:
+Input: s = "06"
+Output: 0
+Explanation: "06" cannot be mapped because "6" is not a valid encoding.`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['DP similar to climbing stairs', 'Handle edge cases: 0, leading zeros'],
+    expectedTopics: ['Dynamic Programming', 'String'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-22',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Word Break',
+    description: `Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words.
+
+Note that the same word in the dictionary may be reused multiple times in the segmentation.
+
+Example 1:
+Input: s = "leetcode", wordDict = ["leet","code"]
+Output: true
+Explanation: Return true because "leetcode" can be segmented as "leet code".
+
+Example 2:
+Input: s = "applepenapple", wordDict = ["apple","pen"]
+Output: true
+
+Example 3:
+Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]
+Output: false`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['DP with boolean array', 'dp[i] = true if s[0:i] can be segmented', 'Use a set for O(1) word lookup'],
+    expectedTopics: ['Dynamic Programming', 'Trie', 'Hash Set'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-23',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Word Break II',
+    description: `Given a string s and a dictionary of strings wordDict, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences in any order.
+
+Example 1:
+Input: s = "catsanddog", wordDict = ["cat","cats","and","sand","dog"]
+Output: ["cats and dog","cat sand dog"]
+
+Example 2:
+Input: s = "pineapplepenapple", wordDict = ["apple","pen","applepen","pine","pineapple"]
+Output: ["pine apple pen apple","pineapple pen apple","pine applepen apple"]
+
+Example 3:
+Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]
+Output: []`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['Backtracking with memoization', 'First check if breakable with Word Break I approach'],
+    expectedTopics: ['Dynamic Programming', 'Backtracking', 'Memoization'],
+    yearAsked: 2023,
+    frequency: 'Medium'
+  },
+  {
+    id: 'g-code-24',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Longest Valid Parentheses',
+    description: `Given a string containing just the characters '(' and ')', return the length of the longest valid (well-formed) parentheses substring.
+
+Example 1:
+Input: s = "(()"
+Output: 2
+Explanation: The longest valid parentheses substring is "()".
+
+Example 2:
+Input: s = ")()())"
+Output: 4
+Explanation: The longest valid parentheses substring is "()()".
+
+Example 3:
+Input: s = ""
+Output: 0`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['Stack storing indices', 'Or DP where dp[i] = length of valid ending at i', 'Or two-pass scan (left-to-right, right-to-left)'],
+    expectedTopics: ['Stack', 'Dynamic Programming', 'String'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-25',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Largest Rectangle in Histogram',
+    description: `Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.
+
+Example 1:
+Input: heights = [2,1,5,6,2,3]
+Output: 10
+Explanation: The largest rectangle has an area = 10 units (height 5, width 2).
+
+Example 2:
+Input: heights = [2,4]
+Output: 4`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['Monotonic increasing stack', 'When popping, calculate area with popped height', 'Or use divide and conquer'],
+    expectedTopics: ['Stack', 'Monotonic Stack', 'Array'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-26',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Maximal Rectangle',
+    description: `Given a rows x cols binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.
+
+Example:
+Input: matrix = [
+  ["1","0","1","0","0"],
+  ["1","0","1","1","1"],
+  ["1","1","1","1","1"],
+  ["1","0","0","1","0"]
+]
+Output: 6
+Explanation: The maximal rectangle is shown above (3 wide, 2 tall).`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Build histogram for each row', 'Apply Largest Rectangle in Histogram for each', 'Or use DP with height, left, right arrays'],
+    expectedTopics: ['Stack', 'Dynamic Programming', 'Matrix'],
+    yearAsked: 2023,
+    frequency: 'Medium'
+  },
+  {
+    id: 'g-code-27',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Jump Game II',
+    description: `You are given a 0-indexed array of integers nums of length n. You are initially positioned at nums[0].
+
+Each element nums[i] represents the maximum length of a forward jump from index i.
+
+Return the minimum number of jumps to reach nums[n - 1].
+
+Example 1:
+Input: nums = [2,3,1,1,4]
+Output: 2
+Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+
+Example 2:
+Input: nums = [2,3,0,1,4]
+Output: 2`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Greedy: track farthest reachable at each level', 'BFS-like level traversal'],
+    expectedTopics: ['Greedy', 'Array', 'Dynamic Programming'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-28',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'N-Queens',
+    description: `The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other.
+
+Given an integer n, return all distinct solutions to the n-queens puzzle.
+
+Each solution contains a distinct board configuration of the n-queens' placement.
+
+Example:
+Input: n = 4
+Output: [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Backtracking', 'Use sets to track occupied columns, diagonals, anti-diagonals'],
+    expectedTopics: ['Backtracking', 'Recursion', 'Array'],
+    yearAsked: 2023,
+    frequency: 'Medium'
+  },
+  {
+    id: 'g-code-29',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Sudoku Solver',
+    description: `Write a program to solve a Sudoku puzzle by filling the empty cells.
+
+A sudoku solution must satisfy all of the following rules:
+1. Each of the digits 1-9 must occur exactly once in each row.
+2. Each of the digits 1-9 must occur exactly once in each column.
+3. Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes.
+
+The '.' character indicates empty cells.
+
+Example:
+Input: board = [["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".","."],[".","9","8",".",".",".",".","6","."],["8",".",".",".","6",".",".",".","3"],["4",".",".","8",".","3",".",".","1"],["7",".",".",".","2",".",".",".","6"],[".","6",".",".",".",".","2","8","."],[".",".",".","4","1","9",".",".","5"],[".",".",".",".","8",".",".","7","9"]]
+Output: Solved board`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Backtracking with constraint propagation', 'Use sets for each row, column, and box'],
+    expectedTopics: ['Backtracking', 'Matrix', 'Recursion'],
+    yearAsked: 2023,
+    frequency: 'Medium'
+  },
+  {
+    id: 'g-code-30',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Clone Graph',
+    description: `Given a reference of a node in a connected undirected graph, return a deep copy (clone) of the graph.
+
+Each node in the graph contains a value (int) and a list (List[Node]) of its neighbors.
+
+Example:
+Input: adjList = [[2,4],[1,3],[2,4],[1,3]]
+Output: [[2,4],[1,3],[2,4],[1,3]]
+Explanation: Node 1's value is 1, and it has two neighbors: Node 2 and 4.`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['BFS or DFS', 'Use a hashmap to track cloned nodes'],
+    expectedTopics: ['Graph', 'BFS', 'DFS', 'Hash Map'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-31',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Graph Valid Tree',
+    description: `You have a graph of n nodes labeled from 0 to n - 1. You are given an integer n and a list of edges where edges[i] = [ai, bi] indicates that there is an undirected edge between nodes ai and bi.
+
+Return true if the edges make up a valid tree, and false otherwise.
+
+A valid tree has:
+1. n-1 edges
+2. All nodes are connected
+3. No cycles
+
+Example 1:
+Input: n = 5, edges = [[0,1],[0,2],[0,3],[1,4]]
+Output: true
+
+Example 2:
+Input: n = 5, edges = [[0,1],[1,2],[2,3],[1,3],[1,4]]
+Output: false`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Check if exactly n-1 edges', 'Union-Find to detect cycles', 'Or BFS/DFS to check connectivity'],
+    expectedTopics: ['Graph', 'Union Find', 'BFS', 'DFS'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-32',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Number of Connected Components',
+    description: `You have a graph of n nodes. You are given an integer n and an array edges where edges[i] = [ai, bi] indicates that there is an edge between ai and bi in the graph.
+
+Return the number of connected components in the graph.
+
+Example 1:
+Input: n = 5, edges = [[0,1],[1,2],[3,4]]
+Output: 2
+
+Example 2:
+Input: n = 5, edges = [[0,1],[1,2],[2,3],[3,4]]
+Output: 1`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Union-Find with path compression', 'Or BFS/DFS from each unvisited node'],
+    expectedTopics: ['Graph', 'Union Find', 'BFS', 'DFS'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-33',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Longest Consecutive Sequence',
+    description: `Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+
+You must write an algorithm that runs in O(n) time.
+
+Example 1:
+Input: nums = [100,4,200,1,3,2]
+Output: 4
+Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
+
+Example 2:
+Input: nums = [0,3,7,2,5,8,4,6,0,1]
+Output: 9`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Use a HashSet for O(1) lookups', 'Only start counting from sequence start (num-1 not in set)'],
+    expectedTopics: ['Hash Set', 'Array', 'Union Find'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-34',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Meeting Rooms II',
+    description: `Given an array of meeting time intervals intervals where intervals[i] = [starti, endi], return the minimum number of conference rooms required.
+
+Example 1:
+Input: intervals = [[0,30],[5,10],[15,20]]
+Output: 2
+
+Example 2:
+Input: intervals = [[7,10],[2,4]]
+Output: 1`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Sort by start time, use min-heap for end times', 'Or use chronological ordering of events'],
+    expectedTopics: ['Heap', 'Sorting', 'Intervals'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-35',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Merge Intervals',
+    description: `Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
+
+Example 1:
+Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
+Output: [[1,6],[8,10],[15,18]]
+Explanation: Since intervals [1,3] and [2,6] overlap, merge them into [1,6].
+
+Example 2:
+Input: intervals = [[1,4],[4,5]]
+Output: [[1,5]]
+Explanation: Intervals [1,4] and [4,5] are considered overlapping.`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Sort by start time', 'Merge if current start <= previous end'],
+    expectedTopics: ['Array', 'Sorting', 'Intervals'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-36',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Insert Interval',
+    description: `You are given an array of non-overlapping intervals intervals where intervals[i] = [starti, endi] represent the start and the end of the ith interval and intervals is sorted in ascending order by starti. You are also given an interval newInterval = [start, end] that represents the start and end of another interval.
+
+Insert newInterval into intervals such that intervals is still sorted in ascending order by starti and intervals still does not have any overlapping intervals (merge overlapping intervals if necessary).
+
+Return intervals after the insertion.
+
+Example 1:
+Input: intervals = [[1,3],[6,9]], newInterval = [2,5]
+Output: [[1,5],[6,9]]
+
+Example 2:
+Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
+Output: [[1,2],[3,10],[12,16]]`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Three parts: before, overlapping, after', 'Merge all overlapping intervals with new one'],
+    expectedTopics: ['Array', 'Intervals'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-37',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Minimum Number of Arrows to Burst Balloons',
+    description: `There are some spherical balloons taped onto a flat wall that represents the XY-plane. The balloons are represented as a 2D integer array points where points[i] = [xstart, xend] denotes a balloon whose horizontal diameter stretches between xstart and xend.
+
+You need to find the minimum number of arrows to burst all balloons. An arrow shot at x can burst all balloons where xstart <= x <= xend.
+
+Example 1:
+Input: points = [[10,16],[2,8],[1,6],[7,12]]
+Output: 2
+Explanation: The balloons can be burst by 2 arrows: Shoot at x = 6 (bursts [2,8] and [1,6]) and x = 11 (bursts [10,16] and [7,12]).
+
+Example 2:
+Input: points = [[1,2],[3,4],[5,6],[7,8]]
+Output: 4`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Sort by end point', 'Greedy: shoot at first balloon end, skip all it bursts'],
+    expectedTopics: ['Greedy', 'Sorting', 'Intervals'],
+    yearAsked: 2024,
+    frequency: 'Medium'
+  },
+  {
+    id: 'g-code-38',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Candy',
+    description: `There are n children standing in a line. Each child is assigned a rating value given in the integer array ratings.
+
+You are giving candies to these children subjected to the following requirements:
+1. Each child must have at least one candy.
+2. Children with a higher rating get more candies than their neighbors.
+
+Return the minimum number of candies you need to have to distribute the candies to the children.
+
+Example 1:
+Input: ratings = [1,0,2]
+Output: 5
+Explanation: You can allocate 2, 1, 2 candies respectively.
+
+Example 2:
+Input: ratings = [1,2,2]
+Output: 4
+Explanation: You can allocate 1, 2, 1 candies respectively.`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['Two passes: left to right, then right to left', 'Take max of both passes for each child'],
+    expectedTopics: ['Greedy', 'Array'],
+    yearAsked: 2023,
+    frequency: 'Medium'
+  },
+  {
+    id: 'g-code-39',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Maximum Product Subarray',
+    description: `Given an integer array nums, find a subarray that has the largest product, and return the product.
+
+The test cases are generated so that the answer will fit in a 32-bit integer.
+
+Example 1:
+Input: nums = [2,3,-2,4]
+Output: 6
+Explanation: [2,3] has the largest product 6.
+
+Example 2:
+Input: nums = [-2,0,-1]
+Output: 0
+Explanation: The result cannot be 2, because [-2,-1] is not a subarray.`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Track both max and min at each position', 'Min can become max when multiplied by negative'],
+    expectedTopics: ['Dynamic Programming', 'Array'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-40',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Best Time to Buy and Sell Stock III',
+    description: `You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+Find the maximum profit you can achieve. You may complete at most two transactions.
+
+Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
+
+Example 1:
+Input: prices = [3,3,5,0,0,3,1,4]
+Output: 6
+Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3.
+Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 3.
+
+Example 2:
+Input: prices = [1,2,3,4,5]
+Output: 4`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['State machine DP with 4 states', 'Or split array and find max profit on each side'],
+    expectedTopics: ['Dynamic Programming', 'Array'],
+    yearAsked: 2024,
+    frequency: 'Medium'
+  },
+  {
+    id: 'g-code-41',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Best Time to Buy and Sell Stock IV',
+    description: `You are given an integer array prices where prices[i] is the price of a given stock on the ith day, and an integer k.
+
+Find the maximum profit you can achieve. You may complete at most k transactions.
+
+Note: You may not engage in multiple transactions simultaneously.
+
+Example 1:
+Input: k = 2, prices = [2,4,1]
+Output: 2
+
+Example 2:
+Input: k = 2, prices = [3,2,6,5,0,3]
+Output: 7`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['DP with 3D state: day, transactions used, holding stock', 'Optimize to 2D by noticing state transitions'],
+    expectedTopics: ['Dynamic Programming', 'Array'],
+    yearAsked: 2023,
+    frequency: 'Medium'
+  },
+  {
+    id: 'g-code-42',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Edit Distance',
+    description: `Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2.
+
+You have the following three operations permitted on a word:
+- Insert a character
+- Delete a character
+- Replace a character
+
+Example 1:
+Input: word1 = "horse", word2 = "ros"
+Output: 3
+Explanation: horse -> rorse (replace 'h' with 'r') -> rose (remove 'r') -> ros (remove 'e')
+
+Example 2:
+Input: word1 = "intention", word2 = "execution"
+Output: 5`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['Classic 2D DP', 'dp[i][j] = min operations to convert word1[0:i] to word2[0:j]'],
+    expectedTopics: ['Dynamic Programming', 'String'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-43',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Distinct Subsequences',
+    description: `Given two strings s and t, return the number of distinct subsequences of s which equals t.
+
+The answer is guaranteed to fit in a 32-bit signed integer.
+
+Example 1:
+Input: s = "rabbbit", t = "rabbit"
+Output: 3
+Explanation: There are 3 ways you can generate "rabbit" from "rabbbit".
+
+Example 2:
+Input: s = "babgbag", t = "bag"
+Output: 5`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['2D DP similar to edit distance', 'dp[i][j] = ways to form t[0:j] from s[0:i]'],
+    expectedTopics: ['Dynamic Programming', 'String'],
+    yearAsked: 2023,
+    frequency: 'Medium'
+  },
+  {
+    id: 'g-code-44',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Interleaving String',
+    description: `Given strings s1, s2, and s3, find whether s3 is formed by an interleaving of s1 and s2.
+
+An interleaving of two strings s and t is a configuration where s and t are divided into n and m substrings respectively, such that:
+- s = s1 + s2 + ... + sn
+- t = t1 + t2 + ... + tm
+- |n - m| <= 1
+- The interleaving is s1 + t1 + s2 + t2 + s3 + t3 + ... or t1 + s1 + t2 + s2 + t3 + s3 + ...
+
+Example:
+Input: s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac"
+Output: true
+
+Input: s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc"
+Output: false`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['2D DP where dp[i][j] = s1[0:i] and s2[0:j] can form s3[0:i+j]'],
+    expectedTopics: ['Dynamic Programming', 'String'],
+    yearAsked: 2024,
+    frequency: 'Medium'
+  },
+  {
+    id: 'g-code-45',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Validate Binary Search Tree',
+    description: `Given the root of a binary tree, determine if it is a valid binary search tree (BST).
+
+A valid BST is defined as follows:
+- The left subtree of a node contains only nodes with keys less than the node's key.
+- The right subtree of a node contains only nodes with keys greater than the node's key.
+- Both the left and right subtrees must also be binary search trees.
+
+Example 1:
+Input: root = [2,1,3]
+Output: true
+
+Example 2:
+Input: root = [5,1,4,null,null,3,6]
+Output: false`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Pass min/max bounds down', 'Or use inorder traversal (should be strictly increasing)'],
+    expectedTopics: ['Tree', 'DFS', 'BST'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-46',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Kth Smallest Element in a BST',
+    description: `Given the root of a binary search tree, and an integer k, return the kth smallest value (1-indexed) of all the values of the nodes in the tree.
+
+Example 1:
+Input: root = [3,1,4,null,2], k = 1
+Output: 1
+
+Example 2:
+Input: root = [5,3,6,2,4,null,null,1], k = 3
+Output: 3
+
+Follow up: If the BST is modified often and you need to find the kth smallest frequently, how would you optimize?`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Inorder traversal gives sorted order', 'Stop when k nodes visited', 'Follow-up: augment nodes with subtree size'],
+    expectedTopics: ['Tree', 'DFS', 'BST'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-47',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Lowest Common Ancestor of a Binary Tree',
+    description: `Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+
+The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (a node can be a descendant of itself).
+
+Example 1:
+Input: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
+Output: 3
+
+Example 2:
+Input: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+Output: 5`,
+    difficulty: 'Medium',
+    timeLimit: 20,
+    hints: ['Recursively search left and right', 'If both return non-null, current node is LCA', 'If only one returns non-null, that\'s the LCA'],
+    expectedTopics: ['Tree', 'DFS', 'Recursion'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-48',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Binary Tree Maximum Path Sum',
+    description: `A path in a binary tree is a sequence of nodes where each pair of adjacent nodes in the sequence has an edge connecting them. A node can only appear in the sequence at most once. The path does not need to pass through the root.
+
+The path sum of a path is the sum of the node's values in the path.
+
+Given the root of a binary tree, return the maximum path sum of any non-empty path.
+
+Example 1:
+Input: root = [1,2,3]
+Output: 6
+Explanation: The optimal path is 2 -> 1 -> 3 with a sum of 2 + 1 + 3 = 6.
+
+Example 2:
+Input: root = [-10,9,20,null,null,15,7]
+Output: 42
+Explanation: The optimal path is 15 -> 20 -> 7 with a sum of 15 + 20 + 7 = 42.`,
+    difficulty: 'Hard',
+    timeLimit: 25,
+    hints: ['At each node, consider: node alone, node + left, node + right, node + left + right', 'Return to parent: max of first three options'],
+    expectedTopics: ['Tree', 'DFS', 'Dynamic Programming'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-49',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Count of Smaller Numbers After Self',
+    description: `Given an integer array nums, return an integer array counts where counts[i] is the number of smaller elements to the right of nums[i].
+
+Example:
+Input: nums = [5,2,6,1]
+Output: [2,1,1,0]
+Explanation:
+To the right of 5 there are 2 smaller elements (2 and 1).
+To the right of 2 there is only 1 smaller element (1).
+To the right of 6 there is 1 smaller element (1).
+To the right of 1 there is 0 smaller element.`,
+    difficulty: 'Hard',
+    timeLimit: 30,
+    hints: ['Merge sort counting inversions', 'Or BST with size tracking', 'Or Binary Indexed Tree'],
+    expectedTopics: ['Merge Sort', 'BST', 'Binary Indexed Tree', 'Segment Tree'],
+    yearAsked: 2024,
+    frequency: 'High'
+  },
+  {
+    id: 'g-code-50',
+    companyId: 'google',
+    categoryId: 'coding',
+    title: 'Range Sum Query - Mutable',
+    description: `Given an integer array nums, handle multiple queries of the following types:
+1. Update the value of an element in nums.
+2. Calculate the sum of the elements of nums between indices left and right inclusive.
+
+Implement the NumArray class:
+- NumArray(int[] nums) Initializes the object with the integer array nums.
+- void update(int index, int val) Updates the value of nums[index] to be val.
+- int sumRange(int left, int right) Returns the sum of the elements of nums between indices left and right inclusive.
+
+Example:
+Input: ["NumArray", "sumRange", "update", "sumRange"]
+       [[[1, 3, 5]], [0, 2], [1, 2], [0, 2]]
+Output: [null, 9, null, 8]`,
+    difficulty: 'Medium',
+    timeLimit: 25,
+    hints: ['Segment Tree for O(log n) update and query', 'Or Binary Indexed Tree (Fenwick Tree)'],
+    expectedTopics: ['Segment Tree', 'Binary Indexed Tree', 'Design'],
     yearAsked: 2024,
     frequency: 'High'
   },
